@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://d1everl5n6ite"]
+[gd_scene load_steps=5 format=4 uid="uid://d1everl5n6ite"]
 
 [ext_resource type="TileSet" uid="uid://bkup1aitj8odg" path="res://assets/tiles.tres" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://c26tyj8iy77xm" path="res://scripts/world.gd" id="1_rwgxs"]
 [ext_resource type="Script" uid="uid://bijaiilsqwwmw" path="res://scripts/testroom.gd" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://dnleg00fun1xb" path="res://scenes/player.tscn" id="4_k0juu"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_rwgxs")
@@ -21,3 +22,5 @@ tile_set = ExtResource("1_nnsk1")
 position = Vector2(-34, -33)
 script = ExtResource("3_4wyf3")
 metadata/_custom_type_script = "uid://bijaiilsqwwmw"
+
+[node name="Player" parent="." instance=ExtResource("4_k0juu")]
