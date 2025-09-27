@@ -13,6 +13,6 @@ func _ready() -> void:
 	$tiles.set_cells_terrain_connect(cells, 0, 1)
 	
 	for n in $Rooms.get_children():
-		if n is Room:
+		if n is Room or n is Link:
 			n.build($tiles)
 	
