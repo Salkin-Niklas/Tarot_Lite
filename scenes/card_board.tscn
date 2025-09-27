@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv33mn3hhcpw0"]
+
+[ext_resource type="Script" uid="uid://cb80jrew68wms" path="res://scripts/card_board.gd" id="1_i41tr"]
+
+[node name="CardBoard" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+columns = 3
+script = ExtResource("1_i41tr")
+
+[node name="Control" type="Control" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Control5" type="Control" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Control6" type="Control" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Control7" type="Control" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Control8" type="Control" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Control9" type="Control" parent="GridContainer"]
+layout_mode = 2

@@ -3,6 +3,8 @@ extends Node2D
 @export
 var size: int = 50
 
+@onready var player: CharacterBody2D = $Player
+
 func _ready() -> void:
 	$tiles.clear()
 	var cells: Array[Vector2i] = []

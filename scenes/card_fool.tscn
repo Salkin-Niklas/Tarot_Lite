@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwsp58kyugfod"]
+
+[ext_resource type="Script" uid="uid://rtkg1qkafixq" path="res://scripts/card_fool.gd" id="1_dkvn6"]
+[ext_resource type="Texture2D" uid="uid://1iwaa6kos2ko" path="res://assets/fool_tmp.png" id="2_mpkci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ostjr"]
+size = Vector2(179, 305)
+
+[node name="CardFool" type="Area2D"]
+script = ExtResource("1_dkvn6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_ostjr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mpkci")
