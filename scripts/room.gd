@@ -1,7 +1,7 @@
-@abstract
 class_name Room
 extends Node2D
 
+@export
 var size: Vector2i
 
 func build(t: TileMapLayer) -> void:
