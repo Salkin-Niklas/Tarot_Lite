@@ -1,36 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1everl5n6ite"]
+[gd_scene load_steps=7 format=3 uid="uid://d1everl5n6ite"]
 
 [ext_resource type="TileSet" uid="uid://bkup1aitj8odg" path="res://assets/tiles.tres" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://c26tyj8iy77xm" path="res://scripts/world.gd" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://ymlo0h0gwjrs" path="res://scenes/chest_room.tscn" id="3_k0juu"]
 [ext_resource type="Script" uid="uid://cddk74ytkyao4" path="res://scripts/link.gd" id="4_71j4m"]
 [ext_resource type="PackedScene" uid="uid://csd7sgntefe6x" path="res://scenes/player.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://dv33mn3hhcpw0" path="res://scenes/card_board.tscn" id="6_qfnet"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_rwgxs")
 size = 100
 
-[node name="ground" type="TileMapLayer" parent="."]
+[node name="Game" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="ground" type="TileMapLayer" parent="Game"]
 tile_set = ExtResource("1_nnsk1")
 
-[node name="tiles" type="TileMapLayer" parent="."]
+[node name="tiles" type="TileMapLayer" parent="Game"]
 tile_set = ExtResource("1_nnsk1")
 
-[node name="Rooms" type="Node2D" parent="."]
+[node name="Rooms" type="Node2D" parent="Game"]
 
-[node name="ChestRoom" parent="Rooms" instance=ExtResource("3_k0juu")]
+[node name="ChestRoom" parent="Game/Rooms" instance=ExtResource("3_k0juu")]
 position = Vector2(-32, -32)
 
-[node name="ChestRoom2" parent="Rooms" instance=ExtResource("3_k0juu")]
+[node name="ChestRoom2" parent="Game/Rooms" instance=ExtResource("3_k0juu")]
 position = Vector2(32, 16)
 
-[node name="Link" type="Node" parent="Rooms" node_paths=PackedStringArray("r1", "r2")]
+[node name="Link" type="Node" parent="Game/Rooms" node_paths=PackedStringArray("r1", "r2")]
 script = ExtResource("4_71j4m")
 r1 = NodePath("../ChestRoom")
 r2 = NodePath("../ChestRoom2")
 metadata/_custom_type_script = "uid://cddk74ytkyao4"
 
-[node name="Player" parent="." instance=ExtResource("4_k0juu")]
+[node name="Player" parent="Game" instance=ExtResource("4_k0juu")]
 
 [node name="GUI" type="CanvasLayer" parent="."]
-layer = 0
+
+[node name="CardBoard" parent="GUI" instance=ExtResource("6_qfnet")]
+
+[node name="Cards" type="CanvasLayer" parent="."]

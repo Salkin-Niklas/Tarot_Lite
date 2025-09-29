@@ -5,7 +5,7 @@ var cooldown: float = 0
 @onready var timer: Timer = Timer.new()
 
 var dragging: bool = false
-@onready var cardboard: Control = $"..".cardboard
+@onready var cardboard: Control = $"../..".cardboard
 var anker: Anker
 var snap_range: float = 40.0
 
