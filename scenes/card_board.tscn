@@ -1,43 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://dv33mn3hhcpw0"]
+[gd_scene load_steps=3 format=3 uid="uid://dv33mn3hhcpw0"]
 
 [ext_resource type="Script" uid="uid://cb80jrew68wms" path="res://scripts/card_board.gd" id="1_i41tr"]
+[ext_resource type="Texture2D" uid="uid://dvgignreav2cf" path="res://assets/board_active.png" id="2_wi6u4"]
 
 [node name="CardBoard" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-columns = 3
+offset_right = 150.0
+offset_bottom = 300.0
+mouse_filter = 2
 script = ExtResource("1_i41tr")
 
-[node name="Control" type="Control" parent="GridContainer"]
-layout_mode = 2
+[node name="SpriteActive" type="Sprite2D" parent="."]
+position = Vector2(15, 140)
+texture = ExtResource("2_wi6u4")
+offset = Vector2(60, 75)
 
-[node name="Control2" type="Control" parent="GridContainer"]
-layout_mode = 2
+[node name="GridActive" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 166.0
+offset_right = 156.0
+offset_bottom = 316.0
+mouse_filter = 2
+columns = 3
 
-[node name="Control3" type="Control" parent="GridContainer"]
-layout_mode = 2
+[node name="SpritePassive" type="Sprite2D" parent="."]
 
-[node name="Control4" type="Control" parent="GridContainer"]
-layout_mode = 2
-
-[node name="Control5" type="Control" parent="GridContainer"]
-layout_mode = 2
-
-[node name="Control6" type="Control" parent="GridContainer"]
-layout_mode = 2
-
-[node name="Control7" type="Control" parent="GridContainer"]
-layout_mode = 2
-
-[node name="Control8" type="Control" parent="GridContainer"]
-layout_mode = 2
-
-[node name="Control9" type="Control" parent="GridContainer"]
-layout_mode = 2
+[node name="GridPassive" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 80.0
+offset_right = 135.0
+offset_bottom = 130.0
+mouse_filter = 2
+columns = 3

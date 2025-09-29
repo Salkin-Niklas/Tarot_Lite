@@ -31,3 +31,6 @@ r2 = NodePath("../ChestRoom2")
 metadata/_custom_type_script = "uid://cddk74ytkyao4"
 
 [node name="Player" parent="." instance=ExtResource("4_k0juu")]
+
+[node name="GUI" type="CanvasLayer" parent="."]
+layer = 0

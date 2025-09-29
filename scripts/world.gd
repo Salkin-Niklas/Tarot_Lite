@@ -4,6 +4,7 @@ extends Node2D
 var size: int = 50
 
 @onready var player: CharacterBody2D = $Player
+var cardboard: Control
 
 func _ready() -> void:
 	$tiles.clear()
@@ -18,3 +19,9 @@ func _ready() -> void:
 		if n is Room or n is Link:
 			n.build($tiles)
 	
+	cardboard = preload("res://scenes/card_board.tscn").instantiate()
+	$GUI.add_child(cardboard)
+	await get_tree().create_timer(1).timeout
+	add_child(CardFool.new(cardboard.slots_active[1]))
+	add_child(CardFool.new(cardboard.slots_active[2]))
+	add_child(CardFool.new(cardboard.slots_active[6]))
