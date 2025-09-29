@@ -6,9 +6,13 @@
 [node name="CardBoard" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 150.0
-offset_bottom = 300.0
+offset_left = 825.0
+offset_top = 25.0
+offset_right = 975.0
+offset_bottom = 325.0
+scale = Vector2(2, 2)
 mouse_filter = 2
+mouse_behavior_recursive = 1
 script = ExtResource("1_i41tr")
 
 [node name="SpriteActive" type="Sprite2D" parent="."]
@@ -23,6 +27,7 @@ offset_top = 166.0
 offset_right = 156.0
 offset_bottom = 316.0
 mouse_filter = 2
+mouse_behavior_recursive = 1
 columns = 3
 
 [node name="SpritePassive" type="Sprite2D" parent="."]

@@ -30,8 +30,9 @@ func _init(ank: Anker, placeholder: bool = false) -> void:
 		add_child(col)
 		
 		sprite = Sprite2D.new()
-		sprite.z_index = 100
 		add_child(sprite)
+	else:
+		input_pickable = false
 
 func _ready() -> void:
 	pass

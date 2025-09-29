@@ -3,7 +3,7 @@ class_name CardFool
 
 func _init(ank: Anker) -> void:
 	super(ank)
-	sprite.texture = preload("res://assets/fool_tmp.png")
+	#sprite.texture = preload("res://assets/fool_tmp.png")
 
 
 func _ready() -> void:
