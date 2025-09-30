@@ -20,7 +20,7 @@ func _ready() -> void:
 		if n is Room or n is Link:
 			n.build($Game/tiles)
 	
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.01).timeout # anchors are not positioned until some frames in
 	$Cards.add_child(CardFool.new(cardboard.slots_active[1]))
 	$Cards.add_child(CardFool.new(cardboard.slots_active[2]))
 	$Cards.add_child(CardFool.new(cardboard.slots_active[6]))
