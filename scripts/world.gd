@@ -24,3 +24,5 @@ func _ready() -> void:
 	$Cards.add_child(CardFool.new(cardboard.slots_active[1]))
 	$Cards.add_child(CardFool.new(cardboard.slots_active[2]))
 	$Cards.add_child(CardFool.new(cardboard.slots_active[6]))
+	$Cards.add_child(CardKingCups.new(cardboard.slots_passive[0]))
+	$Cards.add_child(CardKingCups.new(cardboard.slots_passive[1]))

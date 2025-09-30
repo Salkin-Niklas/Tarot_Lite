@@ -6,6 +6,7 @@ var cooldown: float = 0
 
 var dragging: bool = false
 @onready var cardboard: Control = $"../..".cardboard
+@onready var world: Node2D = $"../.."
 var anker: Anker
 var snap_range: float = 30.0
 
@@ -16,6 +17,48 @@ enum Types{
 	DEFAULT
 }
 var type: Types = Types.DEFAULT
+
+enum Faces{
+	FOOL,
+	MAGICIAN,
+	HIGHPRIESTESS,
+	EMPRESS,
+	EMPEROR,
+	HIEROPHANT,
+	LOVERS,
+	CHARIOT,
+	JUSTICE,
+	HERMIT,
+	WHEELOFFORTUNE,
+	STRENGTH,
+	HANGEDMAN,
+	DEATH,
+	TEMPERANCE,
+	DEVIL,
+	TOWER,
+	STARS,
+	MOON,
+	SUN,
+	JUDGEMENT,
+	WORLD,
+	KING,
+	QUEEN,
+	KNIGHT,
+	JACK,
+	NUMBER,
+	ACE,
+	DEFAULT
+}
+enum Colors{
+	TRUMPF,
+	BATONS,
+	CUPS,
+	SWORDS,
+	COINS,
+	DEFAULT
+}
+var face: Faces = Faces.DEFAULT
+var color: Colors = Colors.DEFAULT
 
 var sprite: Sprite2D
 
@@ -73,7 +116,19 @@ func snap_to_anker() -> void:
 			self.global_position = anker.global_position
 		
 		Types.PASSIVE:
-			pass
+			var nearest_anker: Anker = anker
+			var nearest_dst: float = (self.global_position - anker.global_position).length()
+			for a: Anker in cardboard.slots_passive:
+				var dst: float = (self.global_position - a.global_position).length()
+				if dst<snap_range and dst<nearest_dst:
+					nearest_anker = a
+					nearest_dst = dst
+			if not anker == nearest_anker:
+				anker.attached_card = nearest_anker.attached_card
+				nearest_anker.attached_card.global_position = anker.global_position
+				nearest_anker.attached_card = self
+				anker = nearest_anker
+			self.global_position = anker.global_position
 		
 		Types.UPGRADE:
 			pass
@@ -81,14 +136,21 @@ func snap_to_anker() -> void:
 		Types.DEFAULT:
 			pass
 
-func activate(_world: Node2D) -> void:
+func activate(_args: Array = []) -> void:
 	return
 
-func check_passive_activasion(_world: Node2D) -> void:
+func check_passive_activasion() -> void:
 	return
 
-func equip(_world: Node2D) -> void:
+func equip() -> void:
 	return
 
-func unequip(_world: Node2D) -> void:
+func unequip() -> void:
 	return
+
+func is_card(f: Array[Faces] = [Faces.DEFAULT], c: Array[Colors] = [Colors.DEFAULT]) -> bool:
+	if not (f[0]==Faces.DEFAULT or self.face in f):
+		return false
+	if not (c[0]==Colors.DEFAULT or self.color in c):
+		return false
+	return true
