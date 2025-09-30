@@ -26,7 +26,7 @@ tile_set = ExtResource("1_nnsk1")
 position = Vector2(-32, -32)
 
 [node name="ChestRoom2" parent="Game/Rooms" instance=ExtResource("3_k0juu")]
-position = Vector2(32, 16)
+position = Vector2(144, 16)
 
 [node name="Link" type="Node" parent="Game/Rooms" node_paths=PackedStringArray("r1", "r2")]
 script = ExtResource("4_71j4m")
