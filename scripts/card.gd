@@ -7,7 +7,7 @@ var cooldown: float = 0
 var dragging: bool = false
 @onready var cardboard: Control = $"../..".cardboard
 var anker: Anker
-var snap_range: float = 40.0
+var snap_range: float = 30.0
 
 enum Types{
 	ACTIVE,
